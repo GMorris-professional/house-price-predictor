@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/gavinmorris/PycharmProjects/house-price-predictor/src/models/mlruns/0/1d5c8a88ef0e41e4a54e048d839a5311/artifacts
+end_time: 1763961577960
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d5c8a88ef0e41e4a54e048d839a5311
+run_name: final_training
+run_uuid: 1d5c8a88ef0e41e4a54e048d839a5311
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763961576220
+status: 3
+tags: []
+user_id: gavinmorris

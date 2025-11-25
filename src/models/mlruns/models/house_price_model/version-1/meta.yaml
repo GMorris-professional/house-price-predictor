@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1763961577946
+current_stage: Staging
+description: null
+last_updated_timestamp: 1763961577947
+name: house_price_model
+run_id: 1d5c8a88ef0e41e4a54e048d839a5311
+run_link: null
+source: runs:/1d5c8a88ef0e41e4a54e048d839a5311/tuned_model
+status: READY
+status_message: null
+user_id: null
+version: 1

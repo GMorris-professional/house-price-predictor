@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    ports:
+      - "5555:5000"
+    command: mlflow server --host 0.0.0.0 --backend-store-uri sqlite:///mlflow.db --default-artifact-root /tmp/mlruns
+    container_name: mlflow-tracking-server
+
+  fastapi:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./src/api
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  streamlit:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./streamlit_app
+    environment:
+      - API_URL=http://fastapi:8000/
+    ports:
+      - "8501:8501"
+    command: streamlit run app.py --server.address=0.0.0.0
+    depends_on:
+      - fastapi
+
