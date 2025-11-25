@@ -81,7 +81,12 @@ def process_data(input_file, output_file):
 
 if __name__ == "__main__":
     # Example usage
-    process_data(
-        input_file="../../data/raw/house_data.csv",
-        output_file="../../data/processed/cleaned_house_data.csv"
-    )
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Data processing pipeline')
+    parser.add_argument('--input', required=True, help='Path to cleaned CSV file')
+    parser.add_argument('--output', required=True, help='Path for output CSV file (cleaned data)')
+
+    args = parser.parse_args()
+
+    process_data(args.input, args.output)
